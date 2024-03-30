@@ -1,4 +1,9 @@
-// src/index.d.ts
-export * from "./commonTypes";
-// export * from "./networkTypes";
-// Repeat for any other files containing exports you want to include
+/**
+ * @file index.d.ts
+ * @description Exports all custom types
+ * @module index.d.ts
+ *
+ * All custom types are exported from this file.
+ */
+export * from "@customTypes/commonTypes";
+export * from "@customTypes/networkTypes";

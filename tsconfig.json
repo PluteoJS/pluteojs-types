@@ -5,7 +5,8 @@
 		"outDir": "./dist",
 		"baseUrl": "./",
 		"paths": {
-			"*": ["src/*"]
+			"*": ["src/*"],
+			"@customTypes/*": ["src/customTypes/*"]
 		},
 		"strict": true
 	},

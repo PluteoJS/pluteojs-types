@@ -18,5 +18,5 @@
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"cSpell.words": ["commitlint", "copyfiles", "noemit", "pluteojs"]
+	"cSpell.words": ["commitlint", "copyfiles", "noemit", "pluteojs", "URID"]
 }
