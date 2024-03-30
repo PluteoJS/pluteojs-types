@@ -5,8 +5,12 @@
 	"repository": "git@github.com:PluteoJS/pluteojs-types.git",
 	"author": "Muhammad Swalah A A <swalah@heedlabs.com>",
 	"packageManager": "yarn@3.6.3",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist/**/*"
+	],
 	"scripts": {
-		"postinstall": "husky install",
+		"prepare": "husky install",
 		"check-types": "tsc --noemit",
 		"eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint": "yarn eslint && yarn check-types",
@@ -14,7 +18,10 @@
 		"bump-version": "npm version --no-git-tag-version",
 		"get-next-version": "ts-node ./.standard-version/commands/ComputeNextVersion.ts",
 		"release-branch": "git flow release start $(ts-node ./.standard-version/commands/ComputeNextVersion.ts)",
-		"release": "standard-version"
+		"release": "standard-version",
+		"copy-package-json-to-dist": "copyfiles \"package.json\" \"dist/\"",
+		"copy-index-d-ts-to-dist": "copyfiles -u 1 \"src/index.d.ts\" \"dist/\"",
+		"build": "tsc && yarn copy-index-d-ts-to-dist && yarn copy-package-json-to-dist"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
