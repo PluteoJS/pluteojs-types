@@ -21,7 +21,8 @@
 		"release": "standard-version",
 		"copy-package-json-to-dist": "copyfiles \"package.json\" \"dist/\"",
 		"copy-index-d-ts-to-dist": "copyfiles -u 1 \"src/index.d.ts\" \"dist/\"",
-		"build": "tsc && yarn copy-index-d-ts-to-dist && yarn copy-package-json-to-dist"
+		"copy-extensions-d-ts-to-dist": "copyfiles -u 2 \"src/extensions/*.d.ts\" \"dist/\"",
+		"build": "tsc && yarn copy-index-d-ts-to-dist && yarn copy-extensions-d-ts-to-dist && yarn copy-package-json-to-dist"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [

@@ -6,7 +6,8 @@
 		"baseUrl": "./",
 		"paths": {
 			"*": ["src/*"],
-			"@customTypes/*": ["src/customTypes/*"]
+			"@customTypes/*": ["src/customTypes/*"],
+			"@extensions/*": ["src/customTypes/*"]
 		},
 		"strict": true
 	},
