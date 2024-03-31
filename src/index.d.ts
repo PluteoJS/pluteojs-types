@@ -8,6 +8,8 @@
 export * from "@/customTypes/commonTypes";
 export * from "@/customTypes/networkTypes";
 export * from "@/customTypes/authTypes";
+export * from "@/customTypes/expressServeStaticCore";
+export * from "@/customTypes/expressTypes";
 
 /**
  * All custom extensions are exported from this file.
