@@ -1,4 +1,4 @@
-import {iJWTPayload} from "@customTypes/authTypes";
+import {iJWTPayload} from "@/customTypes/authTypes";
 
 declare module "express-serve-static-core" {
 	/*

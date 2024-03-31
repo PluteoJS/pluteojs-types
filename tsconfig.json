@@ -1,13 +1,13 @@
 {
 	"compilerOptions": {
 		"declaration": true,
-		"emitDeclarationOnly": true,
+		"emitDeclarationOnly": false,
 		"outDir": "./dist",
 		"baseUrl": "./",
 		"paths": {
-			"*": ["src/*"],
+			"@/*": ["src/*"],
 			"@customTypes/*": ["src/customTypes/*"],
-			"@extensions/*": ["src/customTypes/*"]
+			"@extensions/*": ["src/extensions/*"]
 		},
 		"strict": true
 	},
