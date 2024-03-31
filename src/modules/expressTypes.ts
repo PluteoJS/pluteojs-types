@@ -1,11 +1,7 @@
 import {Router, Request, Response} from "express";
 
-import {
-	ParamsDictionary,
-	Query,
-	Send,
-} from "@/customTypes/expressServeStaticCore";
-import {NullableServiceError} from "@/customTypes/commonServiceTypes";
+import {ParamsDictionary, Query, Send} from "./expressServeStaticCore";
+import {NullableServiceError} from "./commonServiceTypes";
 
 type RouteType = (apiRouter: Router) => void;
 

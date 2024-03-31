@@ -15,7 +15,7 @@
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
-		"project": "tsconfig.json",
+		"project": ["./tsconfig.json", "./tsconfig.scripts.json"],
 		"ecmaVersion": "latest",
 		"ecmaFeatures": {"modules": true, "templateStrings": true},
 		"sourceType": "module",

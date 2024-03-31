@@ -1,5 +1,5 @@
-import {NullableString} from "@/customTypes/commonTypes";
-import {httpStatusCodes} from "@/customTypes/networkTypes";
+import {NullableString} from "./commonTypes";
+import {httpStatusCodes} from "./networkTypes";
 
 interface iValidationErrorDetails {
 	source: string;

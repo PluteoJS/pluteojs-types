@@ -5,10 +5,8 @@
 	"repository": "git@github.com:PluteoJS/pluteojs-types.git",
 	"author": "Muhammad Swalah A A <swalah@heedlabs.com>",
 	"packageManager": "yarn@3.6.3",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist/**/*"
-	],
+	"main": "dist/modules/index.js",
+	"types": "dist/modules/index.d.ts",
 	"scripts": {
 		"prepare": "husky install",
 		"check-types": "tsc --project tsconfig.lint.json --noemit",
@@ -19,10 +17,9 @@
 		"get-next-version": "ts-node ./.standard-version/commands/ComputeNextVersion.ts",
 		"release-branch": "git flow release start $(ts-node ./.standard-version/commands/ComputeNextVersion.ts)",
 		"release": "standard-version",
-		"copy-package-json-to-dist": "copyfiles \"package.json\" \"dist/\"",
-		"copy-index-d-ts-to-dist": "copyfiles -u 1 \"src/index.d.ts\" \"dist/\"",
-		"copy-extensions-d-ts-to-dist": "copyfiles -u 1 \"src/extensions/*.d.ts\" \"dist/\"",
-		"build": "tsc && yarn copy-index-d-ts-to-dist && yarn copy-extensions-d-ts-to-dist && yarn copy-package-json-to-dist"
+		"build": "tsc -p tsconfig.build.json",
+		"prep-dist": "cp package.json dist/ && node scripts/prepareDistPackageJson.js",
+		"prepublishOnly": "yarn build && yarn prep-dist"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
@@ -38,6 +35,10 @@
 			"postcommit": "ts-node ./.standard-version/commands/FixGitFlowReleaseBranchName.ts"
 		}
 	},
+	"files": [
+		"dist",
+		"src/global"
+	],
 	"devDependencies": {
 		"@commitlint/cli": "^19.2.1",
 		"@commitlint/config-conventional": "^19.1.0",
@@ -68,13 +69,13 @@
 		"tsconfig-replace-paths": "^0.0.14",
 		"typescript": "^5.4.3"
 	},
-	"volta": {
-		"node": "20.12.0",
-		"yarn": "3.6.3"
-	},
 	"dependencies": {
 		"express": "^4.19.2",
 		"jsonwebtoken": "^9.0.2",
 		"qs": "^6.12.0"
+	},
+	"volta": {
+		"node": "20.12.0",
+		"yarn": "3.6.3"
 	}
 }
