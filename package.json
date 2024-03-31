@@ -1,7 +1,7 @@
 {
 	"name": "@pluteojs/types",
 	"version": "0.1.0",
-	"description": "PluteoJS Server Types",
+	"description": "TypeScript definitions for PluteoJS.",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:PluteoJS/pluteojs-types.git"
@@ -45,6 +45,9 @@
 		"dist",
 		"src/global"
 	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "17.7.1",
 		"@commitlint/config-conventional": "17.7.0",
