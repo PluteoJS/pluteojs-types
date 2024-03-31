@@ -1,10 +1,10 @@
 {
 	"name": "@pluteojs/types",
-	"version": "0.0.0",
-	"description": "PluteoJS Server Types",
+	"version": "0.1.0",
+	"description": "TypeScript definitions for PluteoJS.",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:PluteoJS/pluteojs-types.git"
+		"url": "git+ssh://git@github.com/PluteoJS/pluteojs-types.git"
 	},
 	"license": "MIT",
 	"packageManager": "yarn@3.6.3",
@@ -17,7 +17,7 @@
 		"lint": "yarn eslint && yarn check-types",
 		"format": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
 		"bump-version": "npm version --no-git-tag-version",
-		"get-next-version": "ts-node ./.standard-version/commands/ComputeNextVersion.ts",
+		"get-next-version": "ts-node -P tsconfig.scripts.json ./.standard-version/commands/ComputeNextVersion.ts",
 		"release-branch": "git flow release start $(ts-node -P tsconfig.scripts.json ./.standard-version/commands/ComputeNextVersion.ts)",
 		"release": "standard-version",
 		"build": "tsc -p tsconfig.build.json",
@@ -38,13 +38,16 @@
 			"tag": true
 		},
 		"scripts": {
-			"postcommit": "ts-node ./.standard-version/commands/FixGitFlowReleaseBranchName.ts"
+			"postcommit": "ts-node -P tsconfig.scripts.json ./.standard-version/commands/FixGitFlowReleaseBranchName.ts"
 		}
 	},
 	"files": [
 		"dist",
 		"src/global"
 	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "17.7.1",
 		"@commitlint/config-conventional": "17.7.0",
