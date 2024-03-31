@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"emitDeclarationOnly": false,
+		"outDir": "./dist",
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["src/*"],
+			"@customTypes/*": ["src/customTypes/*"],
+			"@extensions/*": ["src/extensions/*"]
+		},
+		"strict": true
+	},
+	"include": ["src/**/*"],
+	"exclude": [
+		"dist",
+		"build",
+		"node_modules",
+		"babel.config.js",
+		"metro.config.js",
+		"jest.config.js",
+		"commitlint.config.js"
+	]
+}
