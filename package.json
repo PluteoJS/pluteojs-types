@@ -11,7 +11,7 @@
 	],
 	"scripts": {
 		"prepare": "husky install",
-		"check-types": "tsc --noemit",
+		"check-types": "tsc --project tsconfig.lint.json --noemit",
 		"eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint": "yarn eslint && yarn check-types",
 		"format": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -21,7 +21,7 @@
 		"release": "standard-version",
 		"copy-package-json-to-dist": "copyfiles \"package.json\" \"dist/\"",
 		"copy-index-d-ts-to-dist": "copyfiles -u 1 \"src/index.d.ts\" \"dist/\"",
-		"copy-extensions-d-ts-to-dist": "copyfiles -u 2 \"src/extensions/*.d.ts\" \"dist/\"",
+		"copy-extensions-d-ts-to-dist": "copyfiles -u 1 \"src/extensions/*.d.ts\" \"dist/\"",
 		"build": "tsc && yarn copy-index-d-ts-to-dist && yarn copy-extensions-d-ts-to-dist && yarn copy-package-json-to-dist"
 	},
 	"lint-staged": {

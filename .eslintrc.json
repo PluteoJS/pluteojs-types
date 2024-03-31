@@ -26,6 +26,7 @@
 		"@typescript-eslint/eslint-plugin",
 		"prettier"
 	],
+	"ignorePatterns": ["commitlint.config.js"],
 	"settings": {
 		"import/resolver": {
 			"typescript": {} // this loads <rootdir>/tsconfig.json to eslint
