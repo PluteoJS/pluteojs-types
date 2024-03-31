@@ -23,7 +23,8 @@
 		"build": "tsc -p tsconfig.build.json",
 		"copy-global-to-dist": "ts-node -P tsconfig.scripts.json ./scripts/copyGlobalToDist.ts",
 		"prep-and-copy-package-json-to-dist": "ts-node -P tsconfig.scripts.json ./scripts/prepareAndCopyPackageJSONToDist.ts",
-		"prep-dist": "yarn copy-global-to-dist && yarn prep-and-copy-package-json-to-dist",
+		"copy-generic-files-to-dist": "ts-node -P tsconfig.scripts.json ./scripts/copyGenericFilesToDist.ts",
+		"prep-dist": "yarn copy-global-to-dist && yarn prep-and-copy-package-json-to-dist && yarn copy-generic-files-to-dist",
 		"prepublishOnly": "yarn build && yarn prep-dist"
 	},
 	"lint-staged": {
