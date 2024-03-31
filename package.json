@@ -4,7 +4,7 @@
 	"description": "TypeScript definitions for PluteoJS.",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:PluteoJS/pluteojs-types.git"
+		"url": "git+ssh://git@github.com/PluteoJS/pluteojs-types.git"
 	},
 	"license": "MIT",
 	"packageManager": "yarn@3.6.3",
