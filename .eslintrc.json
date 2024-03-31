@@ -15,7 +15,7 @@
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
-		"project": "tsconfig.json",
+		"project": ["./tsconfig.json", "./tsconfig.scripts.json"],
 		"ecmaVersion": "latest",
 		"ecmaFeatures": {"modules": true, "templateStrings": true},
 		"sourceType": "module",
@@ -26,6 +26,7 @@
 		"@typescript-eslint/eslint-plugin",
 		"prettier"
 	],
+	"ignorePatterns": ["commitlint.config.js"],
 	"settings": {
 		"import/resolver": {
 			"typescript": {} // this loads <rootdir>/tsconfig.json to eslint
@@ -204,6 +205,12 @@
 			"files": ["./src/db/repositories/*"],
 			"rules": {
 				"no-useless-constructor": ["off"]
+			}
+		},
+		{
+			"files": ["./scripts/**/*.ts", "./.standard-version/**/*.ts"],
+			"rules": {
+				"import/no-extraneous-dependencies": "off"
 			}
 		}
 	]
