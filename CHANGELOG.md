@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/PluteoJS/pluteojs-types/compare/v0.1.0...v0.1.1) (2024-03-31)
+
+
+### Bug Fixes
+
+* incorrect path config in packaging ([2ca1c41](https://github.com/PluteoJS/pluteojs-types/commit/2ca1c41dc8cc384601c93b0111cf4e22ee5e3571))
+
 ## 0.1.0 (2024-03-31)
 
 

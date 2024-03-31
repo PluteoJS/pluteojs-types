@@ -1,6 +1,6 @@
 {
 	"name": "@pluteojs/types",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "TypeScript definitions for PluteoJS.",
 	"repository": {
 		"type": "git",
@@ -8,8 +8,8 @@
 	},
 	"license": "MIT",
 	"packageManager": "yarn@3.6.3",
-	"main": "dist/modules/index.js",
-	"types": "dist/modules/index.d.ts",
+	"main": "./modules/index.js",
+	"types": "./modules/index.d.ts",
 	"scripts": {
 		"prepare": "husky install",
 		"check-types": "tsc --project tsconfig.lint.json --noemit",
@@ -25,7 +25,10 @@
 		"prep-and-copy-package-json-to-dist": "ts-node -P tsconfig.scripts.json ./scripts/prepareAndCopyPackageJSONToDist.ts",
 		"copy-generic-files-to-dist": "ts-node -P tsconfig.scripts.json ./scripts/copyGenericFilesToDist.ts",
 		"prep-dist": "yarn copy-global-to-dist && yarn prep-and-copy-package-json-to-dist && yarn copy-generic-files-to-dist",
-		"prepublishOnly": "yarn build && yarn prep-dist"
+		"prepublishOnly": "yarn build && yarn prep-dist",
+		"package": "cd dist && npm pack && cd ..",
+		"publish-dry": "cd dist && npm publish --dry-run --access public && cd ..",
+		"publish": "cd dist && npm publish --access public && cd .."
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
@@ -42,8 +45,8 @@
 		}
 	},
 	"files": [
-		"dist",
-		"src/global"
+		"modules/",
+		"global/"
 	],
 	"publishConfig": {
 		"access": "public"
